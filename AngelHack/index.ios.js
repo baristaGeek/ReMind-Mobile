@@ -8,11 +8,12 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity,
 } from 'react-native';
 
 var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
 
-class AwesomeProject extends Component {
+class AngelHack extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -63,24 +64,32 @@ class AwesomeProject extends Component {
     );
   }
 
+
+
   renderMovie(movie) {
     return (
       <View style={styles.container}>
-
         <View style={styles.rightContainer}>
-          <Text style={styles.year}>{movie.year}</Text>
           <Text style={styles.title}>{movie.title}</Text>
+          <Text style={styles.year}>{movie.year}</Text>
         </View>
-
+        <TouchableOpacity>
         <Image
-          source={{uri: movie.posters.thumbnail}}
+          source={require('./chulo.png')}
           style={styles.thumbnail}
         />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => this.setState({title: null})}>
+        <Image
+          source={require('./x.png')}
+          style={styles.thumbnail}
+        />
+        </TouchableOpacity>
       </View>
     );
   }
-
 }
+
 
 var styles = StyleSheet.create({
   container: {
@@ -92,6 +101,7 @@ var styles = StyleSheet.create({
   },
   rightContainer: {
     flex: 1,
+    padding: 10,
   },
   title: {
     fontSize: 15,
@@ -106,9 +116,12 @@ var styles = StyleSheet.create({
   },
   listView: {
     paddingTop: 20,
-    color: 'white',
     backgroundColor: '#F5FCFF', //barrita de arriba
+  },
+  thumbnail: {
+  width: 20,
+  height: 20,
   },
 });
 
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+AppRegistry.registerComponent('AngelHack', () => AngelHack);

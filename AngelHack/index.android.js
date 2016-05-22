@@ -11,7 +11,7 @@ import {
   View
 } from 'react-native';
 
-class AwesomeProject extends Component {
+class AngelHack extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -48,4 +48,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+AppRegistry.registerComponent('AngelHack', () => AngelHack);
